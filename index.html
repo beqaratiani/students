@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Student Statistics</h1>
+      <div class="header">
+        <div class="main-stats">Total Days: <span id="total-days">0</span></div>
+        <div class="main-stats">
+          Missed Lessons: <span id="missed-lessons">0</span>
+        </div>
+        <div class="main-stats">
+          Average Grade: <span id="average-grade">0</span>
+        </div>
+        <div class="main-stats">
+          Total Students: <span id="total-students">0</span>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main-h-row">
+          <h2 class="grade-table">Grade Table</h2>
+          <button class="btn" id="add-stud">Add Student</button>
+          <button class="btn" id="add-day">Add Day</button>
+          <button class="btn" id="rem-stud">Remove Student</button>
+          <button class="btn" id="rem-day">Remove Day</button>
+        </div>
+        <div class="data">
+          <h4 class="students">Students</h4>
+          <h4 class="average">Average</h4>
+        </div>
+        <div id="students"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
