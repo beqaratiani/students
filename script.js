@@ -18,6 +18,12 @@ const updateTotalStud = () => {
   counter.innerHTML = Object.keys(data).length
 }
 
+const changeGrade = (e) => {
+  let newGrade = +prompt('Enter Grade')
+  console.log(newGrade + 2)
+  e.target.innerHTML = newGrade
+}
+
 const addStud = document.querySelector('#add-stud')
 addStud.addEventListener('click', () => {
   let name = prompt('Enter Student Name')
@@ -71,10 +77,31 @@ addDay.addEventListener('click', () => {
       data[student].push(0)
       index++
     }
-    console.log(data)
   }
+  const allDays = document.querySelector('#students')
   newDay.innerHTML = `day ${day}`
   dataRow.appendChild(newDay)
+  allDays.addEventListener('click', (e) => {
+    changeGrade(e)
+  })
 })
 
-const allDays = document.querySelectorAll('.dayStud')
+const remDay = document.querySelector('#rem-day')
+remDay.addEventListener('click', () => {
+  const studentRows = document.querySelectorAll('.student-row')
+  const dayRows = document.querySelector('.data')
+  for (let i = 0; i < studentRows.length; i++) {
+    if (studentRows[i].lastChild.className == 'day-stud') {
+      console.log(dayRows)
+      studentRows[i].removeChild(studentRows[i].lastChild)
+    }
+  }
+  if (dayRows.lastChild.className == 'day') {
+    dayRows.removeChild(dayRows.lastChild)
+    day--
+    updateTotalDays()
+  }
+  for (stud in data) {
+    data[stud].pop()
+  }
+})
